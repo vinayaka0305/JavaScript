@@ -8,7 +8,7 @@ let isLoggedIn = false;
 
 
 //premitive
-// number -> 2 to power of 53 this is a rangle 
+// number -> 2 to power of 53 this is a range 
 // bigInt
 // string => ""
 // boolean => false or true
