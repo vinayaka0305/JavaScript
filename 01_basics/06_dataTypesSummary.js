@@ -21,23 +21,55 @@
 // javaScript is dynamically typed language
 
 //ex of symbol
-const id = Symbol("123")
-const anoterId = Symbol("123")
+// const id = Symbol("123")
+// const anoterId = Symbol("123")
 
-console.log(id === anoterId)
+// console.log(id === anoterId)
 
 // ex of big int
-const bigNumber = 1223445883333333n
+// const bigNumber = 1223445883333333n
 
-const hero = ["roger","tony","thor"]
+// const hero = ["roger","tony","thor"]
 
-const superWomen = {
-    name : "natasha",
-    aka : "BlackWindow"
+// const superWomen = {
+//     name : "natasha",
+//     aka : "BlackWindow"
+// }
+
+// const action = function(){
+//     console.log("attacking")
+// }
+
+// console.log(typeof(bigNumber), "Biggg");// bigint
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// there are two types of memory 
+//1.stack (primitive) when ever the stack used, the variable that we decelared we get a copy of that
+
+//2.Heap (non-primitive)
+// what the defines in heap we get the original (mean whatever changes it reflect in original)
+// refrence of that array or obj 
+
+//examples 1.primitive
+
+let myName = "vinayaka";
+
+let anotherName = myName;
+anotherName = "av"
+
+console.log(myName)//vinayaka
+console.log(anotherName);//av
+
+//2 non-primitive
+
+let userOne = {
+    name : "Vinayaka",
+    emailId :"vav6473@gmail.com"
 }
 
-const action = function(){
-    console.log("attacking")
-}
+let userTwo = userOne;
 
-console.log(typeof(bigNumber), "Biggg");// bigint
+userTwo.emailId = "av@gmail.com"
+
+console.log(userOne.emailId);//av@gmail.com
+console.log(userTwo.emailId);//av@gmail.com
