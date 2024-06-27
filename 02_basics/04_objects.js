@@ -36,17 +36,39 @@ const userData = [{
     id: "1",
     userName: "vinay"
 }, {
-    id:"2",
-    userName:"av"
+    id: "2",
+    userName: "av"
 }
 ]
 
-console.log(user2)
-console.log(Object.keys(user2)); // it will give the keys of object in the form of array
-//[ 'id', 'name', 'isLoggedIn' ]
-console.log(Object.values(user2)) // same it will give the values
-//[ '123abcd', 'kate', false ]
-console.log(Object.entries(user2)) // it will give every key as an array 
-//[ [ 'id', '123abcd' ], [ 'name', 'kate' ], [ 'isLoggedIn', false ] ]
+// console.log(user2)
+// console.log(Object.keys(user2)); // it will give the keys of object in the form of array
+// //[ 'id', 'name', 'isLoggedIn' ]
+// console.log(Object.values(user2)) // same it will give the values
+// //[ '123abcd', 'kate', false ]
+// console.log(Object.entries(user2)) // it will give every key as an array 
+// //[ [ 'id', '123abcd' ], [ 'name', 'kate' ], [ 'isLoggedIn', false ] ]
 
-console.log(user2.hasOwnProperty('isLoggedIn')); // true
+// console.log(user2.hasOwnProperty('isLoggedIn')); // true
+
+//++++++++++++++++++++ Object destructuring ++++++++++++++++++++++++++
+
+const marvel_hero = {
+    name: "Steve Rogers",
+    aka: "Captain America",
+    place: "Broklyn"
+}
+
+// destructuring means extracting the value from the object
+
+// const { name } = marvel_hero
+
+// console.log(name);//Steve Rogers
+
+const {name:fName} = marvel_hero;
+console.log(fName);//Steve Rogers
+
+///randmon user me 
+//https://randomuser.me/api
+
+// json https://jsonformatter.org/
