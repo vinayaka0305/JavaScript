@@ -1,0 +1,136 @@
+Javascript
+
+-> JS is a synchronous and singlethreaded language;
+// synchronous
+-> synchronous means line by execution
+-> by default it is synchronous
+
+//singlethreaded
+-> the code in is executed in only one thread
+
+Synchronous and Single-threaded
+
+Synchronous:
+
+*JavaScript executes code line by line, one after another.
+
+*Each operation waits for the previous one to complete before starting.
+
+Single-threaded:
+
+* JavaScript runs all code in a single thread, 
+  -meaning only one task can be executed at a time.
+
+
+///////////////////////////////////////////////////////////
+
+--> execution context
+
+-> execute one line of the code at a time
+-> here each operation waits for the last one to complete before executing;
+
+Execution Context:
+
+*JavaScript executes one line of code at a time.
+
+* Each operation waits for the previous one to finish before it starts.
+
+
+call stack and Memory heap
+
+Call Stack:
+
+* Keeps track of function calls.
+* Functions are added to the stack when called and removed when they return.
+
+Memory Heap:
+
+* Where memory allocation happens.
+* Stores variables and objects.
+
+Blocking code v/s Non-Blocking code
+
+Blocking code-->
+
+-> Block flow of the program
+->Read file Sync
+
+Non-Blocking code-->
+
+->Does not Block flow of the program
+->Read file Async
+
+////////////////////////////////////////////////////////////////
+
+JS Engine
+-> It is a alone JavaScript execution Engine
+-> It is made up of Memoryheap and callstack
+-> JS Engine is singlethreaded
+
+Web API / Node envinorment
+-> the wen api is in the browser
+-> In the Web api we get access of DOM because it is in the browser. 
+->In node we does not get access of DOM because of Node envinorment
+
+/////////////////////////////////////////////////////////////////////////////////
+
+Here's a very simplified and visual explanation of how synchronous and asynchronous code flows in JavaScript using the Web API, call stack, and event queue:
+
+Synchronous Code Flow:-->
+
+1.Execution Context Created:
+
+-> JavaScript starts by creating an execution context for the code to run.
+
+2.Call Stack:
+
+-> Functions and tasks are pushed onto the call stack.
+
+-> They are executed one by one, synchronously, from top to bottom.
+
+-> Once a function/task is done, it is popped off the stack.
+
+Asynchronous Code Flow:-->
+
+1.Execution Context Created:
+
+-> JavaScript starts by creating an execution context for the code to run.
+
+2.Call Stack:
+
+-> Functions and tasks are pushed onto the call stack.
+
+-> Synchronous code is executed first.
+
+3.Web API:
+
+-> When an asynchronous function (like setTimeout, fetch, or event listener) is called,
+ it is passed to the Web API (browser-provided).
+
+->The Web API handles the asynchronous operation.
+
+4.Event Queue (Task Queue):
+
+-> Once the Web API completes the asynchronous task, 
+  it places a callback function into the Event Queue.
+
+5.Event Loop:
+
+->The Event Loop continuously checks the Call Stack.
+
+-> If the Call Stack is empty, 
+   -it takes the first task from the Event Queue and pushes it onto the Call Stack.
+
+6.Execution:
+
+-> The callback function from the Event Queue is now executed on the Call Stack.
+
+<-------Summary------>
+
+* Synchronous code runs line by line on the Call Stack.
+
+* Asynchronous code is handled by the Web API, 
+  and completed tasks are placed in the Event Queue.
+ 
+* The Event Loop moves tasks from the Event Queue to the Call Stack when the stack is empty,
+ - allowing the asynchronous code to be executed.

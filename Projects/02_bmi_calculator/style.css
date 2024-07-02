@@ -1,0 +1,44 @@
+.container {
+  width: 575px;
+  height: 875px;
+  background-color: #787878;
+  padding-left: 30px;
+}
+h1 {
+  padding-left: 15px;
+  padding-top: 25px;
+}
+
+#height,
+#weight {
+  height: 25px;
+  width: 150px;
+  margin-top: 30px;
+}
+
+#weight-guide {
+  margin-left: 75px;
+  margin-top: 25px;
+}
+#results{
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 90px;
+  color: #ffffff;
+}
+
+button {
+  width: 150px;
+  height: 35px;
+  margin-left: 80px;
+  margin-top: 25px;
+  background-color: #fff;
+  padding: 1px 20px;
+  border-radius: 8px;
+  color: #212121;
+  text-decoration: none;
+  border: 2px solid #212121;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}

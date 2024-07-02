@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <h2 id="text">SetTime Out</h2>
+    <button id="stop">Stop</button>
+    <script>
+        // setTimeout 
+
+        //The setTimeout function in JavaScript is used to schedule
+        // a function to be executed after a specified number of milliseconds.
+
+        // It is a higher-order function
+
+        // that takes two arguments: the function to execute and the delay in milliseconds
+        // before the function is executed.
+
+        // ex:1
+        // setTimeout(function(){
+        //     console.log("vinayaka");
+        // },2000)
+        
+        const sayHi = function(){
+            console.log("Hi")
+        }
+        // here we are passing function refrence
+        setTimeout(sayHi,2000);
+
+        //ex:2
+
+        // document.querySelector("#text").innerHTML = "JS SetTimeout Function";
+
+        const changeH2 = function(){
+            document.querySelector("#text").innerHTML = "JS SetTimeout Function";
+        }
+
+        const stopTimer = setTimeout(changeH2,2000);
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearTimeout(stopTimer);
+            // clearTimeout
+            console.log("stopped")    
+        })
+
+        //clearTimeout is a function in JavaScript used to cancel a timeout
+        // that was previously established by setTimeout. 
+        
+        //When you set a timeout with setTimeout,
+        // it returns a timeout ID that you can pass to clearTimeout to cancel
+        // the execution of the function scheduled by that timeout.
+
+    </script>
+</body>
+</html>

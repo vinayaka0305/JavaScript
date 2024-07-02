@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+  </head>
+  <body>
+    <h2>SetInterval</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      //setInterval is a function in JavaScript used to repeatedly call a function
+      // or execute a code snippet with a fixed time delay between each call.
+      //The setInterval method continues to call the function until
+      // clearInterval is called or the window is closed.
+
+      //function: The function to be executed repeatedly.
+
+      //delayInMilliseconds: The time interval (in milliseconds) between each
+      // call to the function.
+
+      //param1, param2, ...: Optional additional parameters to pass to the function
+      // when it is executed.
+
+      // setInterval(function(){
+      //     console.log("vinayaka")
+      // },2000)
+
+      // const sayName = function(str){
+      //     // console.log(str)
+      // }
+
+      // setInterval(sayName,2000,"vinayaka av");// here we can third parameter
+
+      // Stopping the Interval
+
+      //To stop the repeated execution, you can use the clearInterval
+      // function with the interval ID returned by setInterval.
+
+      //   const sayHi = function () {
+      //     console.log("hi");
+      //   };
+
+      //   const interValId = setInterval(sayHi, 2000);
+
+      //    clearInterval(interValId)
+
+      /////////////////////////////////////////////////////////////////////////////////////////
+      
+      let interValId;
+      const clear = document
+        .querySelector("#start")
+        .addEventListener("click", function () {
+          let sayHi = function () {
+            console.log("hi");
+          };
+          interValId = setInterval(sayHi, 2000);
+        });
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(interValId);
+        console.log("Stopped");
+      });
+    </script>
+  </body>
+</html>
