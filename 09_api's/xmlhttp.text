@@ -1,0 +1,77 @@
+XMLHTTPREQUEST(XHR)
+
+-> XHR Objects are used to intract with servers.
+->You can retrieve the data from the url without having to do full page refresh
+->This enables a web page to update just a part of the page 
+ -without disrupting what the user is doing  
+
+ What is XMLHttpRequest?
+XMLHttpRequest (XHR) is an API provided by web browsers that allows you to interact
+- with servers. 
+You can retrieve data from a URL without having to do a full page refresh.
+This makes web pages more dynamic and responsive.
+
+Key Points to Cover in an Interview
+1. Purpose and usecase
+
+Purpose: Allows asynchronous data fetching from the server.
+
+Use Case: Used for making AJAX (Asynchronous JavaScript and XML) requests,
+          which means updating parts of a web page without reloading the whole page. 
+          Common in loading data for live search, form submission, 
+          -or updating content dynamically.
+
+
+Constructor:
+
+XMLHttpRequest()
+
+The constructor initializes an XMLHttpRequest.
+It must be called before any other method calls.
+
+Instance properties:
+
+XMLHttpRequest.readyState Read only
+
+Returns a number representing the state of the request.
+
+Value	State	                Description
+0	   UNSENT	               Client has been created. open() not called yet.
+1	   OPENED	               open() has been called.
+2	   HEADERS_RECEIVED	       send() has been called, and headers and status are available.
+3	   LOADING	               Downloading; responseText holds partial data.
+4	   DONE	                   The operation is complete.
+
+
+  let url = 'https://api.github.com/users/vinayaka0305'
+       const xhr = new XMLHttpRequest();
+        // using this method we can receive the data and send the data from the server
+        //open method is used send a request
+        xhr.open('GET',url) // it has two paras one is method and another is url
+        // here one thing is we need to call the open by default it will not call
+        // console.log("here");
+        // console.log(xhr.readyState) // 1    open() has been called.
+        //to track continously 
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState); // 2 3 4 will get the updated states
+            if(xhr.readyState === 4){
+                // console.log(this.responseText)
+                // const data = this.responseText
+                // console.log(typeof data) //string
+                // console.log(data.login)
+                const data = JSON.parse(this.responseText)
+                //this refers to the XMLHttpRequest object.
+
+                //responseText is a property of the XMLHttpRequest object 
+                //that contains the raw text of the server's response.
+
+                //JSON.parse() is a method in JavaScript that converts
+                // a JSON-formatted string into a JavaScript object.
+                console.log(typeof data) //object 
+                console.log(data.login) //vinayaka0305
+            }
+        }
+
+        xhr.send() // here the request call goes to server
+        //when the request is sent 
+        //the request will change with the states continuosly  0 1 2 3 4 like the states 

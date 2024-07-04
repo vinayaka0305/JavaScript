@@ -1,0 +1,8 @@
+// the default behaviour of javascript is prototype behaviour;
+
+Array is an -> object -> null (prototype)
+String is an -> object -> null (prototype)
+
+Every thing in the javascript is an object and
+
+all the properties available with the object are also available Array,String etc.... 
