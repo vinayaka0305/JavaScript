@@ -1,0 +1,37 @@
+<!-- Definition:
+bind is a method in JavaScript that creates a new function. This new function,
+when called, has its this keyword set to a specific value that you provide. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react</title>
+  </head>
+  <body>
+    <button>Button Clicked</button>
+  </body>
+  <script>
+    class React {
+      constructor() {
+        this.library = "React";
+        this.server = "https://localhost:3000";
+
+        document
+          .querySelector("button")
+          .addEventListener("click", this.handleClick.bind(this));
+        // Binding handleClick to the current instance and sets a value
+      }
+
+      handleClick() {
+        // console.log("button clicked");//button is clicked
+        console.log(this); // <button>Button Clicked</button>
+        console.log(this.server);
+      }
+    }
+
+    const app = new React();
+  </script>
+</html>
