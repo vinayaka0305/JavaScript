@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures</title>
+  </head>
+  <style>
+    body {
+      background-color: #313131;
+    }
+  </style>
+  <body>
+    <script>
+      //   function init() {
+      //     let name = "mozilla";
+      //     function display() {
+      //       console.log(name);
+      //     }
+      //     display();
+      //   }
+      //   init();
+
+      function outer() {
+        let userName = "vinayaka";
+        // console.log("outer", secret);//secret is not defined
+        function inner() {
+          let secret = "10000";
+          console.log("inner", userName);
+        }
+        function inner2() {
+          // console.log(secret);//secret is not defined
+          console.log("inner2", userName);
+        }
+        inner();
+        inner2();
+      }
+      outer();
+      console.log(userName); //Uncaught ReferenceError: userName is not defined
+      //what ever we declare in the function score is not available at outside
+      // if a function inside a function , the inner fuction has access to all the
+      // variables and methods in outer function is called lexical scoping
+
+      //child access all the properties and methods of parent
+      //parent cannot access childs properties and methods
+      //childs are not accessable to access theirs properties and methods
+    </script>
+  </body>
+</html>

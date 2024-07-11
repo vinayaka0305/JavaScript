@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures</title>
+  </head>
+  <style>
+    body {
+      background-color: #313131;
+    }
+  </style>
+  <body>
+    <button class="orange">orange</button>
+    <button class="green">green</button>
+    <script>
+      // function inti(){
+      //     let name = "mozilla"
+      //     function displayName(){
+      //         console.log(name)
+      //     }
+      //     return displayName();
+      // }
+
+      // let myFunc = inti;
+      // myFunc();
+
+      ///////////////////////////////////////////////////////////////////////////
+
+      // document.querySelector(".orange").addEventListener('click',()=>{
+      //     document.body.style.backgroundColor = `orange`;
+      // })
+
+      //DRY Don't Repeat YourSelf
+
+      // document.querySelector(".green").addEventListener('click',()=>{
+      //     document.body.style.backgroundColor = `green`;
+      // })
+
+      function onClickHandler(color) {
+        return function () {
+          document.body.style.backgroundColor = `${color}`;
+        };
+        // here because the function return with all the lexical scope
+        // we can acces the color
+      }
+      document.querySelector(".green").addEventListener('click',onClickHandler('green'))
+
+      document.querySelector(".orange").addEventListener('click',onClickHandler('orange'))
+    </script>
+  </body>
+</html>
