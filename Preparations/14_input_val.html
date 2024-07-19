@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="data">
+    <button id="btn">click</button>
+    <h2 id="text-display"></h2>
+</body>
+<script>
+    const inputVal = document.querySelector('#data');
+    const btn = document.querySelector('#btn');
+    const display = document.querySelector('#text-display')
+
+    btn.addEventListener('click',()=>{
+        const values = inputVal.value;
+        display.innerHTML = values;
+    })
+
+    inputVal.addEventListener('keyup',()=>{
+        const val = inputVal.value;
+        display.innerHTML = val
+    })
+</script>
+</html>

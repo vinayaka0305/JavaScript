@@ -52,3 +52,38 @@ let user1 = new User('vinayaka',' ','av','28');
 console.log(user1.getFullName());
 user1.editName("vinayaka achar veerachari")
 console.log(user1.getFullName());
+
+
+///////////////////////////////////////////
+
+
+class Account{
+
+    static accCount = 0;
+    static accBalace = 0;
+
+    constructor(accNum,balance){
+        this.accNum = accNum;
+        this.balance = balance;
+
+        Account.accCount += 1;
+        Account.accBalace += balance;
+    }
+
+    static returnAccCount(){
+       return Account.accCount;
+    }
+
+    static returnTBalance(){
+       return Account.accBalace;
+    }
+}
+
+const u1 = new Account("1222",2000);
+const u2 = new Account("122332",2000);
+const u3 = new Account("122222",4000);
+
+const count = Account.returnAccCount();
+console.log(count);
+const bl = Account.returnTBalance();
+console.log(bl);

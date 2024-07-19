@@ -1,0 +1,18 @@
+body{
+    background-color: #444444;
+    color: #fff;
+}
+
+th{
+    background-color: #00008b;
+}
+td:nth-child(1){
+    background-color: #ce1e1e7c;
+}
+
+td:nth-child(8){
+    background-color: #ce1e1e7c;
+}
+td{
+    border: 1px solid #dddddd;
+}

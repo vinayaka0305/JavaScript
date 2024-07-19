@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set and clear</title>
+</head>
+<body>
+    <h2 id="display"></h2>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const display = document.querySelector("#display")
+    const start = document.querySelector("#start");
+    const stop = document.querySelector("#stop");
+
+    let count = 0;
+    const increaseCount = function(){
+        count++;
+        display.innerHTML = count
+    }
+  
+   
+    let time;
+    start.addEventListener('click',()=>{
+        time = setInterval(increaseCount,1000)
+    })
+    stop.addEventListener('click',()=>{
+        clearInterval(time)
+        time = null
+    })
+</script>
+</html>
