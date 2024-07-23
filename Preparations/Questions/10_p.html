@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <ul id="ul"></ul>
+    </div>
+  </body>
+  <script>
+    let arr = [
+      {
+        id: 1,
+        name: "steve",
+      },
+      {
+        id: 2,
+        name: "tony",
+      },
+      {
+        id: 3,
+        name: "thor",
+      },
+      {
+        id: 4,
+        name: "ant-man",
+      },
+    ];
+
+    const ul = document.querySelector("#ul");
+    let selectedItem = [];
+
+   arr.forEach((val)=>{
+    let li = document.createElement("li");
+    let checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+
+    checkBox.addEventListener('change',(e)=>{
+        updateSelectedItems(val.name,e.target.checked)
+    })
+    
+    let text = document.createTextNode(val.name);
+    li.appendChild(checkBox);
+    li.appendChild(text);
+    ul.appendChild(li)
+
+
+   })
+
+   function updateSelectedItems(name,isChecked){
+        if(isChecked){
+            if(!selectedItem.includes(name)){
+                selectedItem.push(name);
+            }else{
+                selectedItem = selectedItem.filter((item)=>{
+                    item !== name;
+                })
+            }
+        }
+        console.log(selectedItem);
+   }
+  </script>
+</html>
